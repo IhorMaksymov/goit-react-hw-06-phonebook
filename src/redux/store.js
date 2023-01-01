@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { contactReducer, filterReducer } from "./contactSlice";
 
-const asd = combineReducers({
+const reducer = combineReducers({
     contacts: contactReducer,
     filter: filterReducer,
 })
@@ -15,7 +15,7 @@ const persistConfig = {
     blacklist: ['filter'],
 };
 
-const persistedReducer = persistReducer(persistConfig, asd);
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 const store = configureStore({
     reducer: persistedReducer,
